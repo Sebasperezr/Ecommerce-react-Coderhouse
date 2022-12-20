@@ -13,7 +13,7 @@ const CartWidget = () => {
         aria-expanded="true"
         aria-controls="collapseOne"
       >
-        <i class="bi bi-cart4"></i>
+        <i className="bi bi-cart4"></i>
         <span className="count-products">3</span>
       </button>
     </div>

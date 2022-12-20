@@ -1,17 +1,16 @@
-
-import './App.css';
-import ItemListContainer from './components/itemListContainer/ItemListContainer';
-import Navbar from './components/navbar/Navbar';
+import "./App.css";
+import Navbar from "./components/navbar/Navbar.jsx";
+import Router from "./router/Router.jsx";
 
 function App() {
   return (
     <div className="App">
       <header>
-        <Navbar/>
+        <Navbar />
       </header>
-  <body>
-    <ItemListContainer/>
-  </body>
+      <div className="app-container">
+       <Router/>
+      </div>
     </div>
   );
 }

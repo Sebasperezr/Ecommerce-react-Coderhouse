@@ -1,0 +1,64 @@
+.card {
+    max-width: 270px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 3px 3px 7px 0px rgba(0, 0, 0, 0.314);
+    margin-inline: 10px;
+    margin-bottom: 10px;
+    overflow-wrap: anywhere;
+    border: none;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.01);
+}
+
+.card:active {
+   opacity: 0.5;
+}
+
+.image {
+    max-width: 270px;
+    width: 100%;
+    height: 270px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-bottom: 3px;
+
+}
+
+.card-body {
+    padding-top: 2px;
+    display: grid;
+
+}
+
+.content-title {
+    padding: 0px;
+    margin: 0px;
+}
+
+.card-title {
+    padding: 0px;
+    margin: 0px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.content-price {
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.card-price {
+    padding: 0px;
+    margin: 0px;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+

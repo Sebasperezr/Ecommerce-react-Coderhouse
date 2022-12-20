@@ -1,7 +1,8 @@
 import React from "react";
 import "./Navbar.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import CartWidget from "../cartWidget/CartWidget";
+import CartWidget from "../cartWidget/CartWidget.jsx";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -18,44 +19,47 @@ const Navbar = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <a className="navbar-brand" href="#Inicio">
+        <Link className="navbar-brand" to="/">
           Morita
-        </a>
+        </Link>
         <div className="navbar-toggler cart">
-          <CartWidget />
+          <Link to={"/cart"}>
+            <CartWidget />
+          </Link>
         </div>
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link" href="#ACCESORIOS">
+              <Link className="nav-link" to="/category/1">
                 ACCESORIOS
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#CEJAS">
+              <Link className="nav-link" to="/category/2">
                 CEJAS
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#LABIOS">
+              <Link className="nav-link" to="/category/3">
                 LABIOS
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#CUIDADO">
+              <Link className="nav-link" to="/category/4">
                 CUIDADO DE PIE
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#OJOS">
+              <Link className="nav-link" to="/category/5">
                 OJOS
-              </a>
+              </Link>
             </li>
           </ul>
-          <div className="d-flex" role="search">
-            <CartWidget />
-            {/* <i class="bi bi-cart4"></i> */}
+          <div className="d-flex">
+            <Link to={"/cart"}>
+              <CartWidget />
+            </Link>
           </div>
         </div>
       </div>
