@@ -1,0 +1,43 @@
+.cart-widget-button {
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    height: 3rem;
+    width: 3rem;
+    background-color: transparent;
+    position: relative;
+}
+
+.cart-widget-button:hover {
+    background-color: #d0d1ff;
+}
+
+.bi-cart4 {
+    font-size: 2.3rem;
+    margin-right: 10px;
+}
+
+.count-products {
+    background-color: white;
+    border-radius: 50%;
+    min-height: 1.1rem;
+    max-height: 1.1rem;
+    min-width: 1.1rem;
+    max-width: 1.1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    position: absolute;
+    top: -6px;
+    right: -6px;
+
+}
+
+.content {
+
+    margin-top: 4px;
+    margin-right: 20px;
+}
