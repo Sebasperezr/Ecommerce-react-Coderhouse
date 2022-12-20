@@ -1,11 +1,8 @@
 import React from "react";
 import "./ItemDetailContainer.css";
-import { useLocation, useParams } from "react-router-dom";
-import { useFetch } from "../../hooks/useFetch";
-import { URL_BASE, URL_ENDPOINTS } from "../../services/constants.js";
+import { useLocation } from "react-router-dom";
 
 const ItemDetailContainer = () => {
-  const { id: idProduct } = useParams() || {};
   const { state: product } = useLocation() || {};
 
   console.log(product);

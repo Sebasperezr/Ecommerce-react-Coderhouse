@@ -10,17 +10,12 @@ const ItemListContainer = () => {
   const { id } = useParams() || {};
   let idCategory = id === undefined ? 1 : id;
   const { state } = useLocation() || {};
-console.log(state);
-  const {
-    data: products,
-    error,
-    loading,
-  } = useFetch(
+  console.log(state);
+  const { data: products } = useFetch(
     `${URL_BASE}/${URL_ENDPOINTS.CATEGORY}/${idCategory}/${URL_ENDPOINTS.PRODUCTS}`
   );
 
   const onHandlerSelect = (product) => {
- 
     navigate(`/item/${product.id}`, { state: product });
   };
 
