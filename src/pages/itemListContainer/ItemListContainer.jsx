@@ -1,22 +1,41 @@
-import React from "react";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import React, { useContext, useEffect } from "react";
+import {  useNavigate, useParams } from "react-router-dom";
 import CardProduct from "../../components/cardProduct/cardProduct.jsx";
-import { URL_BASE, URL_ENDPOINTS } from "../../services/constants.js";
-import { useFetch } from "../../hooks/useFetch.jsx";
 import "./ItemListContainer.css";
+import { CartContext } from "../../context/cartContext.jsx";
+import { firebaseServices } from "../../services/firebase/index.js";
+
+const { getProducts, getProductsByCategory } = firebaseServices;
 
 const ItemListContainer = () => {
   const navigate = useNavigate();
   const { id } = useParams() || {};
-  let idCategory = id === undefined ? 1 : id;
-  const { state } = useLocation() || {};
-  console.log(state);
-  const { data: products } = useFetch(
-    `${URL_BASE}/${URL_ENDPOINTS.CATEGORY}/${idCategory}/${URL_ENDPOINTS.PRODUCTS}`
-  );
+  let idCategory = id;
+  const { products, setProducts } = useContext(CartContext);
+
+  useEffect(() => {
+    const getBDProducts = async () => {
+      try {
+        if (idCategory === undefined) {
+          let allProducts = await getProducts();
+          setProducts(allProducts);
+        } else {
+          onFilter(idCategory);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getBDProducts();
+  }, [idCategory]);
+
+  const onFilter = async (id) => {
+    const filterByCategory = await getProductsByCategory(id);
+    setProducts(filterByCategory);
+  };
 
   const onHandlerSelect = (product) => {
-    navigate(`/item/${product.id}`, { state: product });
+    navigate(`/item/${product.id}`, { state: product.id });
   };
 
   return (
@@ -25,10 +44,10 @@ const ItemListContainer = () => {
         <h2 className="title">Productos</h2>
       </div>
       <div className="container-products">
-        {products.map((product) => (
+        {products?.map((product) => (
           <CardProduct
             product={product}
-            key={product.name}
+            key={product?.name}
             onSelect={onHandlerSelect}
           />
         ))}

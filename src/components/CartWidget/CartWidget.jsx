@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./CartWidget.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import { CartContext } from "../../context/cartContext";
 
 const CartWidget = () => {
+  const { cart } = useContext(CartContext);
   return (
     <div className="content">
       <button
@@ -14,7 +16,7 @@ const CartWidget = () => {
         aria-controls="collapseOne"
       >
         <i className="bi bi-cart4"></i>
-        <span className="count-products">3</span>
+        <span className="count-products">{cart.length}</span>
       </button>
     </div>
   );

@@ -68,6 +68,68 @@
     font-size: 1.2rem;
 }
 
+.card-button-container {
+    display: flex;
+    flex: 0.15;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+.card-button-minus {
+    background-color: #fff;
+    border: 1px solid #212121;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.card-button-minus:hover {
+    background-color: #212121;
+    color: #fff;
+}
+
+.card-button-minus:disabled {
+    background-color: #eee;
+    color: #ffffff;
+    cursor: not-allowed;
+}
+input {
+    text-align: center;
+}
+.card-input {
+    background-color: #fff;
+    border: 1px solid #212121;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+    margin:  0 0.5rem;
+}
+.card-button-plus {
+    background-color: #fff;
+    border: 1px solid #212121;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.card-button-plus:hover {
+    background-color: #212121;
+    color: #fff;
+}
+
+.card-button-plus:disabled {
+    background-color: #eee;
+    color: #ffffff;
+    cursor: not-allowed;
+}
+
 @media only screen and (max-width: 800px) {
     .detail {
         max-width: 500px;

@@ -56,10 +56,34 @@
 }
 
 
-.content-description{
+.content-cart-products{
     display: flex;
-    justify-content: center;
-
-    margin-top: 30px;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+ 
   
+}
+
+.btn-comprar{
+    font-size: 1.8rem; 
+}
+
+
+
+.cart-footer-text{
+    margin-top: 100px;
+    display: flex;
+    justify-content:center;
+
+}
+         
+.footer-button-cart{
+    display: flex;
+    justify-content:center;
+    text-decoration: none;
+    font-size: 2rem;
+    color: white;
+    background-color: black;
+
 }

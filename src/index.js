@@ -6,6 +6,25 @@ import './index.css';
 import App from './App.js';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyA_Q2TFT2buBoTXsz8P4xG7gwCYGv_4YuY",
+  authDomain: "morita-ecommerce.firebaseapp.com",
+  projectId: "morita-ecommerce",
+  storageBucket: "morita-ecommerce.appspot.com",
+  messagingSenderId: "929454780031",
+  appId: "1:929454780031:web:a64f2120f4340d850dd94a",
+  measurementId: "G-SZE40019T1"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
