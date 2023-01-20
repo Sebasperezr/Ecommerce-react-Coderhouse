@@ -26,13 +26,14 @@ const ItemListContainer = () => {
         console.log(error);
       }
     };
+    const onFilter = async (id) => {
+      const filterByCategory = await getProductsByCategory(id);
+      setProducts(filterByCategory);
+    };
     getBDProducts();
-  }, [idCategory]);
+  }, [idCategory, setProducts]);
 
-  const onFilter = async (id) => {
-    const filterByCategory = await getProductsByCategory(id);
-    setProducts(filterByCategory);
-  };
+ 
 
   const onHandlerSelect = (product) => {
     navigate(`/item/${product.id}`, { state: product.id });
