@@ -68,11 +68,13 @@
 .btn-delete {
     margin: 50px;
     font-size: 1.5rem;
+    color: red;
 
 }
 
 .btn-delete::shadow {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     background-color: red;
+    font-weight: 800;
     
 }

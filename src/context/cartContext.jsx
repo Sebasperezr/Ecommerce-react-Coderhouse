@@ -68,6 +68,8 @@ export const CartProvider = ({ children }) => {
         })
     }
 
+ 
+
     return (
         <CartContext.Provider value={{ cart, setCart, onDecreaseItem, onIncreaseItem, getItemQuantity, onRemoveItem, total, products, setProducts}}>
             {children}

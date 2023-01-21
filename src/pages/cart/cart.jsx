@@ -1,51 +1,17 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import "./cart.css";
 import CartItem from "../../components/cartItem/cartItem";
-import { Link } from "react-router-dom";
-import { firebaseServices } from "../../services/firebase";
+import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "../../context/cartContext";
 
-const { createOrder } = firebaseServices;
 
 const Cart = () => {
   const { onRemoveItem, cart, total } = useContext(CartContext);
-  const [orderResult, setOrderResult] = useState();
 
-  const onHandlerOrder = async () => {
-    const newOrder = {
-      buyer: {
-        name: "Juan",
-        email: "juan@gmail.com",
-        phone: "123456789",
-        shippingMethod: "delivery",
-        address: "Calle falsa 123",
-      },
-      createdAt: new Date(),
-      id: 1,
-      items: cart,
-      payment: {
-        currency: "USD",
-        method: "cash",
-        type: "cash",
-      },
-      seller: {
-        id: 1,
-        name: "Pepito",
-        phone: "123456789",
-        email: "adwda@gmail.com",
-      },
-      shipping: {
-        deliveryDate: new Date() + 7,
-        trackingNumber: "123456789",
-        type: "delivery",
-      },
-      total: total,
-    };
-    const result = await createOrder(newOrder);
-    setOrderResult(result);
+  const navigate = useNavigate();
+  const navigateCheckout = () => {
+    navigate("/checkout");
   };
-
-  console.log("orderResult", orderResult);
   return (
     <div>
       <div className="content-title">
@@ -66,13 +32,16 @@ const Cart = () => {
                 onRemoveProduct={onRemoveItem}
               />
             ))}
+            <div className="total-car-container">
+              <p className="total-car">TOTAL ${total}</p>
+            </div>
             <div className="button-container-comprar">
               <button
                 type="button"
                 className=" btn btn-comprar"
-                onClick={onHandlerOrder}
+                onClick={navigateCheckout}
               >
-                Comprar
+                Siguiente
               </button>
             </div>
           </>

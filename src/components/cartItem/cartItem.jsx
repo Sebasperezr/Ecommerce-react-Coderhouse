@@ -2,7 +2,6 @@ import React from "react";
 import "./cartItem.css";
 
 const CartItem = ({ id, image, name, price, quantity, onRemoveProduct }) => {
-  console.log(id);
   return (
     <div className="cart-container-detail">
       <div className="cart-detail row">
